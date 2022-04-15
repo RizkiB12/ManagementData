@@ -26,29 +26,24 @@
                     <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">TTL</th>
+                            <th scope="col">Alamat</th>
+                            <th scope="col">Riwayat Pekerjaan</th>
+                            <th scope="col">KTP</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
+                        @foreach ($alldatapegawai as $pegawai)
+                            <tr>
+                                <th scope="row">{{ $pegawai->id }}</th>
+                                <td>{{ $pegawai->nama }}</td>
+                                <td>{{ $pegawai->tempat_lahir }}, {{ $pegawai->tgl_lahir }}</td>
+                                <td>{{ $pegawai->alamat }}</td>
+                                <td>{{ $pegawai->riwayat_pekerjaan }}</td>
+                                <td>{{ $pegawai->ktp }}</td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

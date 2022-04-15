@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DataPegawaiController;
+use Illuminate\Routing\RouteGroup;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,4 +21,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::group(['prefix' => 'manajemendata', 'middleware' => 'auth'], function () {
+    Route::get('/', [DataPegawaiController::class, 'index'])->name('manajemendata.index');
+});
