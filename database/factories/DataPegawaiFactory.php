@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Arr;
 
 class DataPegawaiFactory extends Factory
 {
@@ -19,6 +20,7 @@ class DataPegawaiFactory extends Factory
             'tgl_lahir' => $this->faker->date,
             'alamat' => $this->faker->address,
             'riwayat_pekerjaan' => $this->faker->sentence,
+            'category' => Arr::random(['PPK', 'KPPS', 'PPS']),
         ];
     }
 }

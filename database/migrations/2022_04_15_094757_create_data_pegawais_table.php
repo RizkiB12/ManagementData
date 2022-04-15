@@ -21,6 +21,7 @@ class CreateDataPegawaisTable extends Migration
             $table->string('alamat');
             $table->string('riwayat_pekerjaan');
             $table->string('ktp')->nullable();
+            $table->string('category');
             $table->timestamps();
         });
     }

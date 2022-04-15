@@ -25,23 +25,25 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
+                            {{-- <th scope="col">#</th> --}}
                             <th scope="col">Nama</th>
                             <th scope="col">TTL</th>
                             <th scope="col">Alamat</th>
                             <th scope="col">Riwayat Pekerjaan</th>
                             <th scope="col">KTP</th>
+                            <th scope="col">Category</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($alldatapegawai as $pegawai)
                             <tr>
-                                <th scope="row">{{ $pegawai->id }}</th>
+                                {{-- <th scope="row">{{ $pegawai->id }}</th> --}}
                                 <td>{{ $pegawai->nama }}</td>
                                 <td>{{ $pegawai->tempat_lahir }}, {{ $pegawai->tgl_lahir }}</td>
                                 <td>{{ $pegawai->alamat }}</td>
                                 <td>{{ $pegawai->riwayat_pekerjaan }}</td>
                                 <td>{{ $pegawai->ktp }}</td>
+                                <td>{{ $pegawai->category }}</td>
                             </tr>
                         @endforeach
                     </tbody>

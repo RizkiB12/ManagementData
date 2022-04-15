@@ -22,5 +22,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::group(['prefix' => 'manajemendata', 'middleware' => 'auth'], function () {
-    Route::get('/', [DataPegawaiController::class, 'index'])->name('manajemendata.index');
+    Route::get('/ppk', [DataPegawaiController::class, 'indexPPK'])->name('manajemendata.index');
+    Route::get('/kpps', [DataPegawaiController::class, 'indexKPPS'])->name('manajemendata.index');
+    Route::get('/pps', [DataPegawaiController::class, 'indexPPS'])->name('manajemendata.index');
 });

@@ -8,11 +8,21 @@ use Illuminate\Http\Request;
 class DataPegawaiController extends Controller
 {
 
-    public function index()
+    public function indexPPK()
     {
-        $alldatapegawai = DataPegawai::all();
-        $pegawai = DataPegawai::first();
-        // return $pegawai;
+        $alldatapegawai = DataPegawai::where('category', 'PPK')->get();
+        return view('home', compact('alldatapegawai'));
+    }
+
+    public function indexKPPS()
+    {
+        $alldatapegawai = DataPegawai::where('category', 'KPPS')->get();
+        return view('home', compact('alldatapegawai'));
+    }
+
+    public function indexPPS()
+    {
+        $alldatapegawai = DataPegawai::where('category', 'PPS')->get();
         return view('home', compact('alldatapegawai'));
     }
 }
